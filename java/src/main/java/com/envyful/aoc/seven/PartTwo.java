@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class PartTwo {
 
     public static int calculateRequiredDeletion(String text) {
-        Map<String, List<Main.File>> directories = Maps.newHashMap();
+        Map<String, List<File>> directories = Maps.newHashMap();
         Map<String, AtomicInteger> directorySizes = Maps.newHashMap();
         List<String> currentDir = Lists.newArrayList();
         boolean listing = false;
@@ -35,7 +35,7 @@ public class PartTwo {
                 String[] split = s.split(" ");
 
                 if (!s.startsWith("dir")) {
-                    directories.computeIfAbsent("/" + String.join("/", currentDir), abc -> Lists.newArrayList()).add(new Main.File(split[1], split[0]));
+                    directories.computeIfAbsent("/" + String.join("/", currentDir), abc -> Lists.newArrayList()).add(new File(split[1], split[0]));
 
                     for (int i = 0; i <= currentDir.size(); i++) {
                         directorySizes.computeIfAbsent("/" + String.join("/", currentDir.subList(0, i)), dir -> new AtomicInteger(0)).addAndGet(Integer.parseInt(split[0]));
