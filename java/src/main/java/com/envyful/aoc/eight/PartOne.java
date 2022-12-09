@@ -17,8 +17,6 @@ public class PartOne {
                 trees[i][j] = Integer.parseInt(String.valueOf(chars[j]));
                 System.out.print(trees[i][j]);
             }
-
-            System.out.println();
         }
 
         int visible = (split.length * 2) + (2 * split[0].toCharArray().length) - 4;

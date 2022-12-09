@@ -20,7 +20,6 @@ public class PartOne {
 
             if (stacks == null && s.isEmpty()) {
                 stacks = generateStacks(lines);
-                System.out.println(stacks);
                 continue;
             }
 
@@ -39,9 +38,6 @@ public class PartOne {
 
                 toStack.add(fromStack.remove(fromStack.size() - 1));
             }
-
-            System.out.println(s);
-            System.out.println(stacks);
         }
 
         StringBuilder builder = new StringBuilder();

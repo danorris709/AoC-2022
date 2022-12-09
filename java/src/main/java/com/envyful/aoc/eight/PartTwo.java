@@ -17,8 +17,6 @@ public class PartTwo {
                 trees[i][j] = Integer.parseInt(String.valueOf(chars[j]));
                 System.out.print(trees[i][j]);
             }
-
-            System.out.println();
         }
 
         int best = -1;
