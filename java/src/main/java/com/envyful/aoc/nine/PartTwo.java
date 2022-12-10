@@ -12,8 +12,8 @@ import java.util.stream.IntStream;
 public class PartTwo {
 
     public static int countTailMovement(String text) {
-        List<Main.Position> positions = IntStream.range(0, 10).mapToObj(i -> new Main.Position(0, 0)).toList();
-        Set<Main.Position> travelledPositions = Sets.newHashSet(positions.get(positions.size() - 1).copy());
+        List<Position> positions = IntStream.range(0, 10).mapToObj(i -> new Position(0, 0)).toList();
+        Set<Position> travelledPositions = Sets.newHashSet(positions.get(positions.size() - 1).copy());
 
         for (String s : text.split("\n")) {
             String[] elements = s.split(" ");
@@ -21,7 +21,7 @@ public class PartTwo {
             int amount = Integer.parseInt(String.valueOf(elements[1]));
 
             for (int i = 0; i < amount; i++) {
-                Main.Position head = positions.get(0);
+                Position head = positions.get(0);
 
                 switch (direction.toLowerCase(Locale.ROOT)) {
                     case "r" -> head.setX(head.getX() + 1);
@@ -31,7 +31,7 @@ public class PartTwo {
                 }
 
                 for (int pos = 1; pos < positions.size(); pos++) {
-                    Main.Position tail = positions.get(pos);
+                    Position tail = positions.get(pos);
                     head = positions.get(pos - 1);
                     int deltaX = head.getX() - tail.getX();
                     int deltaY = head.getY() - tail.getY();
