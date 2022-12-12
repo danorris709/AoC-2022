@@ -1,18 +1,18 @@
 package com.envyful.aoc.nine;
 
-import com.envyful.aoc.Main;
 import com.google.common.collect.Sets;
 
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class PartTwo {
 
     public static int countTailMovement(String text) {
-        List<Position> positions = IntStream.range(0, 10).mapToObj(i -> new Position(0, 0)).toList();
+        List<Position> positions = IntStream.range(0, 10).mapToObj(i -> new Position(0, 0)).collect(Collectors.toList());
         Set<Position> travelledPositions = Sets.newHashSet(positions.get(positions.size() - 1).copy());
 
         for (String s : text.split("\n")) {
